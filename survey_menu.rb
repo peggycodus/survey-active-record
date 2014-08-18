@@ -1,10 +1,11 @@
-equire 'pg'
-require './lib/expense'
-require './lib/category'
-require './lib/expense_category'
-require 'date'
+require 'bundler/setup'
+Bundler.require(:default)
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
-DB = PG.connect({ :dbname => 'expense_test' })
+database_configurations = YAML::load(File.open('./db/config.yml'))
+development_configuration = database_configurations['development']
+ActiveRecord::Base.establish_connection(development_configuration)
+
 
 #############################################
 
@@ -47,10 +48,11 @@ def main_menu
   def user_menu
 
     puts "Type 'survey' - to take a survey"
-    puts " Type 'all' - to see all my surveys"
+    puts " Type 'mine' - to see all my surveys"
+    case gets.chomp.downcase
     when 'survey'
       take_survey
-    when all
+    when 'mine'
       show_my_surveys
     else
       puts " Please choose a valid menu option"
@@ -58,3 +60,4 @@ def main_menu
     end
   end
 end
+main_menu

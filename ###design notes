@@ -8,11 +8,16 @@
   id
   number
   description
+  survey_id
 -Response
   id
   number
   description
   custom_response
+  question_id
+-Person
+  name
+  survey_id
 
 ####Menu
 add/edit/delete survey
