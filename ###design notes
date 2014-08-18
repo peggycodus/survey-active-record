@@ -15,6 +15,7 @@
   description
   custom_response
   question_id
+  survey_id
 -Person
   name
   survey_id
@@ -24,4 +25,5 @@ add/edit/delete survey
 add/edit/delete question
 add/edit/delete responses
 take survey
+see my surveys
 view response statistics
