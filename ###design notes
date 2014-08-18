@@ -1,0 +1,22 @@
+###design notes
+
+####Classes
+-Survey
+  id
+  name
+-Question
+  id
+  number
+  description
+-Response
+  id
+  number
+  description
+  custom_response
+
+####Menu
+add/edit/delete survey
+add/edit/delete question
+add/edit/delete responses
+take survey
+view response statistics
